@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>guessing game2 by isa</title>
+    <script>
+    var number = Math.round(Math.random() * 100 + 1);
+    var numberOfTries = 0;
+    function newGame(){
+    number = Math.round(Math.random() * 100 + 1);
+    document.getElementById("guess").focus();
+    document.getElementById("guess").select();
+    numberOfTries = 0;
+    }
+    function checkGuess(){
+    numberOfTries = numberOfTries + 1;
+     var guess = document.getElementById("guess").value;
+     var msg = "";
+     if (guess > number)
+     msg = guess + " was too high. Try again";
+     else if (guess < number)
+      msg = guess + " was too low. Try again";
+      else {
+        msg = guess + " was the number you win! ";
+        msg = msg + "try a new game :D";
+        msg = "you won in " + numberOfTries + "tries"
+        newGame();
+      }
+      var output = document.getElementById("output");
+      var numberOfTriesElement=document.getElementById("number-of-tries");
+      numberOfTriesElement.innerHTML = numberOfTries + " try"
+      output.innerHTML = msg;
+      document.getElementById("guess").focus();
+      document.getElementById("guess").select();
+    }   
+    </script>
+</head>
+<body onload="newGame()" >
+ <h1>Isa's guessing game 2 :)</h1>
+ <form onsubmit="checkGuess(); return false;">
+    Enter a number between 1 and 100:
+    <input type="text" id="guess" size="3" >
+    <button type="button" onclick="checkGuess()"> Guess </button>
+</form>
+ <h3 id="output">Guess a number and press the button.</h3>
+ <h3 id="number-of-tries"></h3>
+ 
+</body>
+</html>

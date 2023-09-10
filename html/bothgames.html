@@ -1,0 +1,38 @@
+<html>
+<head>
+ <title>hello world</title>
+ <script>
+  function saymyname() {
+    var name = prompt ("what is ur name");
+var num = prompt ("how much times do you want your name written")
+for ( var n = 1; n <= num ; n++ ) {
+document.write( name + " " );
+}
+  }
+ </script>
+<script>
+    function guessinggame() {
+        var number = Math.round ( Math.random() * 100 + 1 );
+var guess = "";
+while (guess != number) {
+    guess = prompt("guess a number between 1 and 100: ");
+if ( guess < number )
+    alert("too low.");
+else if ( guess > number )
+    alert("too high.");
+else 
+   alert("correct! :D You win");
+}
+var name = prompt ("what is your name");
+for (var n = 1; n <= 500; n++) {
+    document.write(name + " wins!!! ");   
+}  
+    }
+ </script>
+</head>
+<body>
+ <h1>test world</h1>
+ <h3>html and javascript</h3>
+ <button onclick="guessinggame()">test button</button>
+</body>
+</html>
